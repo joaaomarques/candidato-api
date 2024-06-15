@@ -1,9 +1,9 @@
-package br.com.cidadao.api.candidato_api.controller;
+package br.com.cidadao.api.candidato_api.controller.candidato;
 
-import br.com.cidadao.api.candidato_api.dto.CandidatoDTO;
-import br.com.cidadao.api.candidato_api.dto.NovoCandidatoDTO;
-import br.com.cidadao.api.candidato_api.model.Candidato;
-import br.com.cidadao.api.candidato_api.service.CandidatoService;
+import br.com.cidadao.api.candidato_api.dto.candidato.CandidatoDTO;
+import br.com.cidadao.api.candidato_api.dto.candidato.NovoCandidatoDTO;
+import br.com.cidadao.api.candidato_api.domain.candidato.Candidato;
+import br.com.cidadao.api.candidato_api.service.candidato.CandidatoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/candidato")
+@RequestMapping("api/v1/candidato")
 public class CandidatoController {
 
     @Autowired

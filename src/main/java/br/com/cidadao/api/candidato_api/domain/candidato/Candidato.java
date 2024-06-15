@@ -1,7 +1,7 @@
-package br.com.cidadao.api.candidato_api.model;
+package br.com.cidadao.api.candidato_api.domain.candidato;
 
-import br.com.cidadao.api.candidato_api.dto.CandidatoDTO;
-import br.com.cidadao.api.candidato_api.dto.NovoCandidatoDTO;
+import br.com.cidadao.api.candidato_api.dto.candidato.CandidatoDTO;
+import br.com.cidadao.api.candidato_api.dto.candidato.NovoCandidatoDTO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;

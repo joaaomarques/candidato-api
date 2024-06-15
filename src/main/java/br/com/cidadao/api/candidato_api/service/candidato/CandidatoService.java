@@ -1,11 +1,10 @@
-package br.com.cidadao.api.candidato_api.service;
+package br.com.cidadao.api.candidato_api.service.candidato;
 
-import br.com.cidadao.api.candidato_api.dto.CandidatoDTO;
-import br.com.cidadao.api.candidato_api.dto.NovoCandidatoDTO;
+import br.com.cidadao.api.candidato_api.dto.candidato.CandidatoDTO;
+import br.com.cidadao.api.candidato_api.dto.candidato.NovoCandidatoDTO;
 import br.com.cidadao.api.candidato_api.exceptions.ObjetoNaoEncontradoException;
-import br.com.cidadao.api.candidato_api.model.Candidato;
+import br.com.cidadao.api.candidato_api.domain.candidato.Candidato;
 import br.com.cidadao.api.candidato_api.repository.CandidatoRepository;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

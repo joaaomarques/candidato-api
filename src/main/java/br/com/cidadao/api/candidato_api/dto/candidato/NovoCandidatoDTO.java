@@ -1,6 +1,5 @@
-package br.com.cidadao.api.candidato_api.dto;
+package br.com.cidadao.api.candidato_api.dto.candidato;
 
-import br.com.cidadao.api.candidato_api.model.Candidato;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.validation.constraints.Size;
 
