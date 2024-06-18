@@ -1,20 +1,28 @@
 package br.com.cidadao.api.candidato_api.dto.candidato;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Date;
 
 public class NovoCandidatoDTO {
 
-    @Size(min=4, max = 100)
+    @NotNull(message = "Preenchimento Obrigatório")
+    @Size(min=4, max = 100 , message = "O tamanho deve ser entre 4 e 100 caracteres")
     private String nome;
+
+    @NotNull(message = "Preenchimento Obrigatório")
     @JsonFormat(pattern = "dd/MM/yyyy")
     private Date nascimento;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private Date dataCriacao;
-    @Size(max = 1)
+
+    @Size(max = 1, message = "Preencher somente como 'M' ou 'F'")
+    @NotNull(message = "Preenchimento Obrigatório")
     private String sexo = "M";
+
+    @NotNull(message = "Preenchimento Obrigatório")
     private Integer nota;
     private String logradouro;
     private String bairro;

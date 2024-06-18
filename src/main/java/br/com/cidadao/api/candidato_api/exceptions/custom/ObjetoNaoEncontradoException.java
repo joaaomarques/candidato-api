@@ -1,4 +1,4 @@
-package br.com.cidadao.api.candidato_api.exceptions;
+package br.com.cidadao.api.candidato_api.exceptions.custom;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

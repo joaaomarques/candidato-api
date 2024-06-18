@@ -2,7 +2,7 @@ package br.com.cidadao.api.candidato_api.service.candidato;
 
 import br.com.cidadao.api.candidato_api.dto.candidato.CandidatoDTO;
 import br.com.cidadao.api.candidato_api.dto.candidato.NovoCandidatoDTO;
-import br.com.cidadao.api.candidato_api.exceptions.ObjetoNaoEncontradoException;
+import br.com.cidadao.api.candidato_api.exceptions.custom.ObjetoNaoEncontradoException;
 import br.com.cidadao.api.candidato_api.domain.candidato.Candidato;
 import br.com.cidadao.api.candidato_api.repository.CandidatoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -3,10 +3,6 @@ package br.com.cidadao.api.candidato_api.domain.user;
 import br.com.cidadao.api.candidato_api.dto.usuario.UsuarioDTO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "USUARIO")

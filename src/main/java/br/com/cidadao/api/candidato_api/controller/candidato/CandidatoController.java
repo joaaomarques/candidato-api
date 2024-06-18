@@ -4,6 +4,7 @@ import br.com.cidadao.api.candidato_api.dto.candidato.CandidatoDTO;
 import br.com.cidadao.api.candidato_api.dto.candidato.NovoCandidatoDTO;
 import br.com.cidadao.api.candidato_api.domain.candidato.Candidato;
 import br.com.cidadao.api.candidato_api.service.candidato.CandidatoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,18 +18,19 @@ import java.util.Date;
 
 @RestController
 @RequestMapping("api/v1/candidato")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CandidatoController {
 
     @Autowired
     private CandidatoService candidatoService;
 
-    @GetMapping
+    @GetMapping("/lista")
     public ResponseEntity<Collection<CandidatoDTO>> findAll() {
         Collection<CandidatoDTO> candidatoDTOS = this.candidatoService.findAll();
         return ResponseEntity.ok().body(candidatoDTOS);
     }
 
-    @GetMapping("/filter")
+    @GetMapping("/lista/filter")
     public ResponseEntity<Collection<CandidatoDTO>> findByFilters(
             @RequestParam(required = false) String nome,
             @RequestParam(required = false) @DateTimeFormat(pattern = "yyyy-MM-dd") Date nascimento,
@@ -59,7 +61,7 @@ public class CandidatoController {
     }
 
     @PostMapping
-    public  ResponseEntity<Void> create(@RequestBody NovoCandidatoDTO novoCandidatoDTO) {
+    public ResponseEntity<Void> create(@Valid @RequestBody NovoCandidatoDTO novoCandidatoDTO) {
 
         Candidato candidato = this.candidatoService.create(novoCandidatoDTO);
 
@@ -68,7 +70,7 @@ public class CandidatoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CandidatoDTO> update(@RequestBody CandidatoDTO candidatoDTO, @PathVariable Long id) {
+    public ResponseEntity<CandidatoDTO> update(@Valid @RequestBody CandidatoDTO candidatoDTO, @PathVariable Long id) {
         candidatoDTO.setId(id);
         this.candidatoService.update(candidatoDTO);
         return ResponseEntity.noContent().build();
